@@ -1,8 +1,6 @@
 package io.github.regbl.fetchrewardsjsonlist.data
 
 import androidx.lifecycle.LiveData
-import retrofit2.Retrofit
-import retrofit2.create
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -1,15 +1,12 @@
 package io.github.regbl.fetchrewardsjsonlist.modules
 
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import io.github.regbl.fetchrewardsjsonlist.data.Webservice
-import io.github.regbl.fetchrewardsjsonlist.data.WebserviceImpl
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import retrofit2.create
 
 @Module
 @InstallIn(SingletonComponent::class)

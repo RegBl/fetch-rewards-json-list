@@ -2,7 +2,6 @@ package io.github.regbl.fetchrewardsjsonlist.data
 
 import androidx.lifecycle.LiveData
 import retrofit2.http.GET
-import retrofit2.http.Path
 import javax.inject.Inject
 
 interface Webservice {

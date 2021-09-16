@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Fetch Rewards Json List</string>
+    <string name="id_label">Item ID</string>
+    <string name="list_id_label">Item listId</string>
+    <string name="name_label">Item Name</string>
+</resources>

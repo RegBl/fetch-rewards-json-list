@@ -17,8 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         println("Here's a console message")
 
-        viewModel.rawJson.observe(this, Observer {
-            Log.i("MainActivity", it)
+        viewModel.itemList.observe(this, Observer {
+            Log.i(TAG, it.toString())
         })
+    }
+
+    companion object {
+        const val TAG = "MainActivity"
     }
 }

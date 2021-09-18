@@ -1,20 +1,15 @@
 package io.github.regbl.fetchrewardsjsonlist.data
 
 import androidx.lifecycle.LiveData
+import retrofit2.Call
+import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class Repository @Inject constructor(
-    private val webservice: Webservice
-) {
+interface Repository {
+    suspend fun getItemList(): Response<List<Item>>
+}
 
-    suspend fun getItemList(): LiveData<String> = webservice.getItemList()
-
-//    val retrofit = Retrofit.Builder()
-//        .baseUrl("https://fetch-hiring.s3.amazonaws.com/")
-//        .build()
-//
-//    val service = retrofit.create(Webservice::class.java)
-//    val rawData = service.
+class RepositoryImpl @Inject constructor(private val webservice: Webservice): Repository {
+    override suspend fun getItemList(): Response<List<Item>> = webservice.getItemList()
 }

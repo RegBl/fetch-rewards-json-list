@@ -9,26 +9,20 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import io.github.regbl.fetchrewardsjsonlist.data.Item
 
-class ItemsAdapter() : ListAdapter<Item, ItemsAdapter.ItemViewHolder>(ItemsDiffCallback()) {
+class ItemsAdapter : ListAdapter<Item, ItemsAdapter.ItemViewHolder>(ItemsDiffCallback()) {
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var currentItem: Item? = null
-        val textViewId: TextView
-        val textViewListId: TextView
-        val textViewName: TextView
-
-        init {
-            textViewId = view.findViewById(R.id.id)
-            textViewListId = view.findViewById(R.id.list_id)
-            textViewName = view.findViewById(R.id.name)
-        }
+        private val textViewId: TextView = view.findViewById(R.id.id)
+        private val textViewListId: TextView = view.findViewById(R.id.list_id)
+        private val textViewName: TextView = view.findViewById(R.id.name)
 
         fun bind(item: Item) {
             currentItem = item
 
             textViewName.text = item.name
-            textViewListId.text = ("listId: ${item.listId.toString()}")
-            textViewId.text = ("id: ${item.id.toString()}")
+            textViewListId.text = ("listId: ${item.listId}")
+            textViewId.text = ("id: ${item.id}")
         }
     }
 

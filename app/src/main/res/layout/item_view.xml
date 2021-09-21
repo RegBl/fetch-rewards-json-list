@@ -16,13 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/id_label"
-        android:textSize="10sp" />
+        android:textSize="11sp" />
 
     <TextView
         android:id="@+id/list_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/list_id_label"
-        android:textSize="10sp" />
+        android:textSize="11sp" />
 
 </LinearLayout>

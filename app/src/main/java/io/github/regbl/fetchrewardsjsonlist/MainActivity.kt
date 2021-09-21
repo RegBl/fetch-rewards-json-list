@@ -1,10 +1,8 @@
 package io.github.regbl.fetchrewardsjsonlist
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,14 +22,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = itemsAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        viewModel.itemList.observe(this, Observer {
-            it?.let {
-                itemsAdapter.submitList(it)
+        viewModel.itemList.observe(this, {
+            it?.let { itemList ->
+                itemsAdapter.submitList(itemList)
             }
         })
-    }
-
-    companion object {
-        const val TAG = "MainActivity"
     }
 }

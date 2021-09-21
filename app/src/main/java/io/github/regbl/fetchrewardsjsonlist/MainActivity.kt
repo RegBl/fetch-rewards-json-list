@@ -5,20 +5,29 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val viewModel : ViewModel by viewModels()
+    private lateinit var recyclerView : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        println("Here's a console message")
+        recyclerView = findViewById(R.id.recyclerView)
+
+        val itemsAdapter = ItemsAdapter()
+        recyclerView.adapter = itemsAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         viewModel.itemList.observe(this, Observer {
-            Log.i(TAG, it.toString())
+            it?.let {
+                itemsAdapter.submitList(it)
+            }
         })
     }
 

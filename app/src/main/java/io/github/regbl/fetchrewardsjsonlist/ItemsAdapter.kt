@@ -27,8 +27,8 @@ class ItemsAdapter() : ListAdapter<Item, ItemsAdapter.ItemViewHolder>(ItemsDiffC
             currentItem = item
 
             textViewName.text = item.name
-            textViewListId.text = item.listId.toString()
-            textViewId.text = item.id.toString()
+            textViewListId.text = ("listId: ${item.listId.toString()}")
+            textViewId.text = ("id: ${item.id.toString()}")
         }
     }
 
